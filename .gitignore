@@ -1,0 +1,81 @@
+# =========================
+# Environment variables & secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python cache files
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# Testing & coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Type checking & linting
+# =========================
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# =========================
+# IDE settings
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Operating system files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Local databases and backups
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.bak
+*.backup
+
+# =========================
+# Local secrets / certificates
+# =========================
+*.pem
+*.key
+*.p12
+*.pfx
+
+# =========================
+# Local environment overrides
+# =========================
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+notes.md
+resources.txt
