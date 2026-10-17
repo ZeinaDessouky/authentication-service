@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from schemas import UserCreate, UserResponse,UserLogin
 from database import get_db
 from models import User
-from security import hash_password, verify_password
+from security import hash_password, verify_password, create_access_token
 
 router = APIRouter()
 
@@ -64,7 +64,8 @@ def login(userData: UserLogin, db: Session = Depends(get_db)):
         )
 
     #NOW WE'LL GENERATE A TOKEN FOR THE USER AND RETURN IT IN THE RESPONSE USING python-jose.
-
+    data_for_token = {'sub': user.email}
+    token = create_access_token(data_for_token)
 
     return {
         "message": "Login successful",
@@ -72,5 +73,6 @@ def login(userData: UserLogin, db: Session = Depends(get_db)):
             "id": user.id,
             "full_name": user.full_name,
             "email": user.email
-        }
+        },
+        "access_token": token
     }

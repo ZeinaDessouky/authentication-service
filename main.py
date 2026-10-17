@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import Base, engine
 from models import User
-from database import get_db
+from database import Base, engine, get_db
 from sqlalchemy.orm import Session
 from router import auth
 
